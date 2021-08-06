@@ -1093,27 +1093,18 @@ const listaProdutos = [
   }
 ]
 
-// function nomeDaFuncao() { }
-
-// reduce((acumulator, elementoAtual) => aacumulator + elementoAtual.paramento, 0)
-
-// map // mapear o array e retornar um novo array [{}] => []
-// reduce // item.preco * listaProdutos.lenght => number
-// filter // listaProdutos.filter( item => item.emDestaque == 'sim')
 //=============================================================================================================================================
 
 function exercicio01(estoqueTotal) {
 
-  let test = 0
-  for (let item of listaProdutos) {
-    test = test + item.qtdEstoque
+  // let test = 0
+  // for (let item of listaProdutos) {
+  //   test = test + item.qtdEstoque
+  // }
+  // console.log(test)
 
-  }
-
-  console.log(test)
-
-  // estoqueTotal = listaProdutos.reduce((prevent, current) => prevent + current.qtdEstoque, 0)
-  // console.log(`Total de itens em estoque ${estoqueTotal}.`)
+  estoqueTotal = listaProdutos.reduce((prevent, current) => prevent + current.qtdEstoque, 0)
+  console.log(`Total de itens em estoque ${estoqueTotal}.`)
 }
 exercicio01()
 
@@ -1121,17 +1112,16 @@ exercicio01()
 
 function exercicio02(emDestaque) {
 
-  emDestaque = 0
-  for (item of listaProdutos) {
-    if (item.emDestaque == 'sim') {
-      emDestaque = emDestaque + item.qtdEstoque
-    }
-  }
-  console.log(emDestaque)
+  // emDestaque = 0
+  // for (item of listaProdutos) {
+  //   if (item.emDestaque == 'sim') {
+  //     emDestaque = emDestaque + item.qtdEstoque
+  //   }
+  // }
+  // console.log(emDestaque)
 
-
-  // emDestaque = listaProdutos.filter(item => item.emDestaque.includes('sim')).reduce((prevent, current) => prevent + current.qtdEstoque, 0)
-  // console.log(`Total de itens em destaque ${emDestaque}.`)
+  emDestaque = listaProdutos.filter(item => item.emDestaque.includes('sim')).reduce((prevent, current) => prevent + current.qtdEstoque, 0)
+  console.log(`Total de itens em destaque ${emDestaque}.`)
 }
 exercicio02()
 
@@ -1139,17 +1129,17 @@ exercicio02()
 
 function exercicio03(disponiveis) {
 
-  disponiveis = 0
-  for (item of listaProdutos) {
-    if (item.disponivel == 'sim') {
-      disponiveis = disponiveis + item.qtdEstoque
-    }
-  }
-  console.log(disponiveis)
+  // disponiveis = 0
+  // for (item of listaProdutos) {
+  //   if (item.disponivel == 'sim') {
+  //     disponiveis = disponiveis + item.qtdEstoque
+  //   }
+  // }
+  // console.log(disponiveis)
 
 
-  // disponiveis = listaProdutos.filter(item => item.disponivel.includes('sim')).reduce((prevent, current) => prevent + current.qtdEstoque, 0)
-  // console.log(`Total de itens disponveis ${disponiveis}.`)
+  disponiveis = listaProdutos.filter(item => item.disponivel.includes('sim')).reduce((prevent, current) => prevent + current.qtdEstoque, 0)
+  console.log(`Total de itens disponveis ${disponiveis}.`)
 }
 exercicio03()
 
@@ -1157,32 +1147,31 @@ exercicio03()
 
 function exercicio04(disponiveisDestaques) {
 
-  disponiveisDestaques = 0
+  // disponiveisDestaques = 0
+  // for (item of listaProdutos) {
+  //   if (item.emDestaque == 'sim' && item.disponivel == 'sim') {
+  //     disponiveisDestaques = disponiveisDestaques + item.qtdEstoque
+  //   }
+  // }
+  // console.log(disponiveisDestaques)
 
-  for (item of listaProdutos) {
-    if (item.emDestaque == 'sim' && item.disponivel == 'sim') {
-      disponiveisDestaques = disponiveisDestaques + item.qtdEstoque
-    }
-  }
-  console.log(disponiveisDestaques)
 
-
-  // disponiveisDestaques = listaProdutos.filter(item => item.emDestaque.includes('sim') && item.emDestaque.includes('sim')).reduce((prevent, current) => prevent + current.qtdEstoque, 0)
-  // console.log(`Total de itens disponveis e em destaques ${disponiveisDestaques}.`)
+  disponiveisDestaques = listaProdutos.filter(item => item.emDestaque.includes('sim') && item.emDestaque.includes('sim')).reduce((prevent, current) => prevent + current.qtdEstoque, 0)
+  console.log(`Total de itens disponveis e em destaques ${disponiveisDestaques}.`)
 }
 exercicio04()
 //=============================================================================================================================================
 
 function exercicio05(inventario) {
 
-  inventario = 0
-  for (item of listaProdutos) {
-    inventario = inventario + item.qtdEstoque * item.preco
-  }
+  // inventario = 0
+  // for (item of listaProdutos) {
+  //   inventario = inventario + item.qtdEstoque * item.preco
+  // }
+  // console.log(inventario)
 
-  console.log(inventario)
-  // inventario = listaProdutos.map(item => item.qtdEstoque * item.preco).reduce((prevent, current) => prevent + current, 0)
-  // console.log(`Total do inventario da empresa é de R$ ${inventario}`)
+  inventario = listaProdutos.map(item => item.qtdEstoque * item.preco).reduce((prevent, current) => prevent + current, 0)
+  console.log(`Total do inventario da empresa é de R$ ${inventario}`)
 }
 exercicio05()
 
@@ -1190,25 +1179,25 @@ exercicio05()
 
 function exercicio06(maisCaro) {
 
-  precos = 0
-  nome = ''
-  for (item of listaProdutos) {
-    if (item.preco > precos) {
-      precos = item.preco
-      nome = item.descricao
-    }
-  }
-  console.log(nome, precos)
-
-
-  // maisCaro = listaProdutos.map(item => item.preco).reduce((prevent, current) => Math.max(prevent, current))
-  // nomeMaisBarato = listaProdutos.map(item => {
-  //   if (maisCaro == item.preco) {
-  //     nomeProdutoMaisCaro = item.descricao
-  //     nomeDepartamento = item.departamento.nomeDepto
+  // precos = 0
+  // nome = ''
+  // for (item of listaProdutos) {
+  //   if (item.preco > precos) {
+  //     precos = item.preco
+  //     nome = item.descricao
   //   }
-  // })
-  // console.log(`O produto ${nomeProdutoMaisCaro} é o item mais caro e custa R$ ${maisCaro.toFixed(2)}  e pertence ao departamento de ${nomeDepartamento}`)
+  // }
+  // console.log(nome, precos)
+
+
+  maisCaro = listaProdutos.map(item => item.preco).reduce((prevent, current) => Math.max(prevent, current))
+  nomeMaisBarato = listaProdutos.map(item => {
+    if (maisCaro == item.preco) {
+      nomeProdutoMaisCaro = item.descricao
+      nomeDepartamento = item.departamento.nomeDepto
+    }
+  })
+  console.log(`O produto ${nomeProdutoMaisCaro} é o item mais caro e custa R$ ${maisCaro.toFixed(2)}  e pertence ao departamento de ${nomeDepartamento}`)
 }
 exercicio06()
 
@@ -1216,24 +1205,24 @@ exercicio06()
 
 function exercicio07(maisBarato) {
 
-  precos = 100000000000000000000000000000000000
-  nome = ''
-  for (item of listaProdutos) {
-    if (item.preco < precos) {
-      precos = item.preco
-      nome = item.descricao
-    }
-  }
-  console.log(nome, precos)
-  // maisBarato = listaProdutos.map(item => item.preco).reduce((prevent, current) => Math.min(prevent, current))
-
-  // nomeMaisBarato = listaProdutos.map(item => {
-  //   if (maisBarato == item.preco) {
-  //     nomeProdutoMaisBarato = item.descricao
-  //     nomeDepartamento = item.departamento.nomeDepto
+  // precos = 100000000000000000000000000000000000
+  // nome = ''
+  // for (item of listaProdutos) {
+  //   if (item.preco < precos) {
+  //     precos = item.preco
+  //     nome = item.descricao
   //   }
-  // })
-  // console.log(`O produto ${nomeProdutoMaisBarato} é o item mais barato e custa R$ ${maisBarato.toFixed(2)} e pertence ao departamento de ${nomeDepartamento}`)
+  // }
+  // console.log(nome, precos)
+
+  maisBarato = listaProdutos.map(item => item.preco).reduce((prevent, current) => Math.min(prevent, current))
+  nomeMaisBarato = listaProdutos.map(item => {
+    if (maisBarato == item.preco) {
+      nomeProdutoMaisBarato = item.descricao
+      nomeDepartamento = item.departamento.nomeDepto
+    }
+  })
+  console.log(`O produto ${nomeProdutoMaisBarato} é o item mais barato e custa R$ ${maisBarato.toFixed(2)} e pertence ao departamento de ${nomeDepartamento}`)
 }
 exercicio07()
 
@@ -1241,26 +1230,25 @@ exercicio07()
 
 function exercicio08(maisValioso) {
 
-  maisValioso = 0
-  qualquerCoisaAi = 0
-  nomeDoItem = ''
-  for (item of listaProdutos) {
-    qualquerCoisaAi = item.preco * item.qtdEstoque
-    if (maisValioso < qualquerCoisaAi) {
-      maisValioso = qualquerCoisaAi
-      nomeDoItem = item.descricao
-    }
-  }
-  console.log(maisValioso, nomeDoItem)
-
-  // maisValioso = listaProdutos.map(item => item.preco * item.qtdEstoque).reduce((prevent, current) => Math.max(prevent, current))
-
-  // nomeMaisValioso = listaProdutos.filter(item => item.disponivel.includes('sim')).map(item => {
-  //   if (maisValioso == (item.qtdEstoque * item.preco)) {
-  //     nomeProdutoMaisValioso = item.descricao
+  // maisValioso = 0
+  // qualquerCoisaAi = 0
+  // nomeDoItem = ''
+  // for (item of listaProdutos) {
+  //   qualquerCoisaAi = item.preco * item.qtdEstoque
+  //   if (maisValioso < qualquerCoisaAi) {
+  //     maisValioso = qualquerCoisaAi
+  //     nomeDoItem = item.descricao
   //   }
-  // })
-  // console.log(`O produto ${nomeProdutoMaisValioso} possui o maior valor em estoque de R$ ${maisValioso.toFixed(2)} `)
+  // }
+  // console.log(maisValioso, nomeDoItem)
+
+  maisValioso = listaProdutos.map(item => item.preco * item.qtdEstoque).reduce((prevent, current) => Math.max(prevent, current))
+  nomeMaisValioso = listaProdutos.filter(item => item.disponivel.includes('sim')).map(item => {
+    if (maisValioso == (item.qtdEstoque * item.preco)) {
+      nomeProdutoMaisValioso = item.descricao
+    }
+  })
+  console.log(`O produto ${nomeProdutoMaisValioso} possui o maior valor em estoque de R$ ${maisValioso.toFixed(2)} `)
 }
 exercicio08()
 
@@ -1268,28 +1256,27 @@ exercicio08()
 
 function exercicio09() {
 
-  let menosValioso = 1000000000000
-  qualquerCoisaAi = 0
-  nomeDoItem = ''
-  for (item of listaProdutos) {
-    if (item.qtdEstoque > 0) {
-      qualquerCoisaAi = item.preco * item.qtdEstoque
-      if (menosValioso > qualquerCoisaAi) {
-        menosValioso = qualquerCoisaAi
-        nomeDoItem = item.descricao
-      }
-    }
-  }
-  console.log(menosValioso, nomeDoItem)
-
-  // menosValioso = listaProdutos.filter(item => item.disponivel.includes('sim')).map(item => item.preco * item.qtdEstoque).reduce((prevent, current) => Math.min(prevent, current))
-
-  // nomeMenosValioso = listaProdutos.filter(item => item.disponivel.includes('sim')).map(item => {
-  //   if (menosValioso == (item.qtdEstoque * item.preco)) {
-  //     nomeProdutoMenosValioso = item.descricao
+  // let menosValioso = 1000000000000
+  // qualquerCoisaAi = 0
+  // nomeDoItem = ''
+  // for (item of listaProdutos) {
+  //   if (item.qtdEstoque > 0) {
+  //     qualquerCoisaAi = item.preco * item.qtdEstoque
+  //     if (menosValioso > qualquerCoisaAi) {
+  //       menosValioso = qualquerCoisaAi
+  //       nomeDoItem = item.descricao
+  //     }
   //   }
-  // })
-  // console.log(`O produto ${nomeProdutoMenosValioso} possui o menor valor em estoque de R$ ${menosValioso.toFixed(2)}`)
+  // }
+  // console.log(menosValioso, nomeDoItem)
+
+  menosValioso = listaProdutos.filter(item => item.disponivel.includes('sim')).map(item => item.preco * item.qtdEstoque).reduce((prevent, current) => Math.min(prevent, current))
+  nomeMenosValioso = listaProdutos.filter(item => item.disponivel.includes('sim')).map(item => {
+    if (menosValioso == (item.qtdEstoque * item.preco)) {
+      nomeProdutoMenosValioso = item.descricao
+    }
+  })
+  console.log(`O produto ${nomeProdutoMenosValioso} possui o menor valor em estoque de R$ ${menosValioso.toFixed(2)}`)
 }
 exercicio09()
 
@@ -1297,15 +1284,14 @@ exercicio09()
 
 function exercicio10(ticketMedio) {
 
-  ticketMedio = 0
-  for (item of listaProdutos) {
-    ticketMedio = ticketMedio + (item.preco * item.qtdEstoque) / listaProdutos.length
-  }
+  // ticketMedio = 0
+  // for (item of listaProdutos) {
+  //   ticketMedio = ticketMedio + (item.preco * item.qtdEstoque) / listaProdutos.length
+  // }
+  // console.log(ticketMedio.toFixed(2))
 
-  console.log(ticketMedio.toFixed(2))
-
-//   ticketMedio = listaProdutos.map(item => item.qtdEstoque * item.preco / listaProdutos.length).reduce((prevent, current) => prevent + current, 0)
-//   console.log(`O valor do ticket médio é R$ ${ticketMedio.toFixed(2)}`)
+  ticketMedio = listaProdutos.map(item => item.qtdEstoque * item.preco / listaProdutos.length).reduce((prevent, current) => prevent + current, 0)
+  console.log(`O valor do ticket médio é R$ ${ticketMedio.toFixed(2)}`)
   // 
 }
   
@@ -1313,20 +1299,4 @@ exercicio10()
 
 //=============================================================================================================================================
 
-function exercicio11(somatorioDepartamentos) {
-  // let deps = {}
-  // somatorioDepartamentos = listaProdutos.forEach(item => {
-  //   deps[item.departamento.nomeDepto] = (deps[item.departamento.nomeDepto] || 0) + item.qtdEstoque
-
-
-  const deps = listaProdutos.reduce((prevent, current) => {
-    prevent[current.departamento.nomeDepto] = (prevent[current.departamento.nomeDepto] || 0) + current.qtdEstoque
-    return prevent
-  }, {})
-
-  console.log(deps)
-}
-exercicio11()
-
-//=============================================================================================================================================
 
