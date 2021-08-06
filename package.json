@@ -1,0 +1,11 @@
+{
+  "name": "desafio-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "solucao.js",
+  "scripts": {
+    "start": "node solucao.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
